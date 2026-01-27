@@ -1,0 +1,17 @@
+.DS_Store
+exports/
+node_modules/
+corrections/
+data/
+scripts/
+package*.json
+
+# Exceptions: app-project workspaces
+!app-project/client/package.json
+!app-project/client/package-lock.json
+!app-project/api/package.json
+!app-project/api/package-lock.json
+
+# Exceptions: TP starters
+!TPs/**/package.json
+!TPs/**/package-lock.json
