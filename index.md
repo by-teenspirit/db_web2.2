@@ -21,7 +21,7 @@
 7. Jointures — [Slides](slides/07_jointures.md) · [HTML](docs/07_jointures.html)
 8. Agrégation — [Slides](slides/08_aggregation.md) · [HTML](docs/08_aggregation.html)
 9. Sous-requêtes (requêtes imbriquées) — [Slides](slides/11_sous_requetes.md) · [HTML](docs/11_sous_requetes.html)
-10. JSON dans MySQL — [Slides](slides/10_json_mysql.md) · [HTML](docs/10_json_mysql.html)
+10. Transactions — [Slides](slides/09_transactions.md) · [HTML](docs/09_transactions.html)
 
 ## Exercices
 
@@ -34,7 +34,6 @@
 - 06 : [Exercices/06_modele_relationnel.md](Exercices/06_modele_relationnel.md)
 - 07 : [Exercices/07_jointures.md](Exercices/07_jointures.md)
 - 08 : [Exercices/08_aggregation.md](Exercices/08_aggregation.md)
-- 10 : [Exercices/10_json_mysql.md](Exercices/10_json_mysql.md)
 - 11 : [Exercices/11_sous_requetes.md](Exercices/11_sous_requetes.md)
 
 ## Corrections
@@ -48,7 +47,6 @@
 - 06 : [corrections/06_modele_relationnel.md](corrections/06_modele_relationnel.md)
 - 07 : [corrections/07_jointures.md](corrections/07_jointures.md)
 - 08 : [corrections/08_aggregation.md](corrections/08_aggregation.md)
-- 10 : [corrections/10_json_mysql.md](corrections/10_json_mysql.md)
 - 11 : [corrections/11_sous_requetes.md](corrections/11_sous_requetes.md)
 
 ## Diagrammes (UML & pédagogiques)

@@ -14,7 +14,6 @@ paginate: true
 - Installer MySQL et importer une base d'exemple
 - Comprendre SQL vs NoSQL (grands modèles)
 - Créer des tables (DDL) simplement
-- Manipuler du `JSON` dans MySQL (stockage + requêtes)
 - Interroger des données (`SELECT`, filtres, tri, pagination)
 - Comprendre le relationnel (PK/FK) et croiser des tables (jointures)
 - Produire des indicateurs (agrégation)
@@ -51,7 +50,7 @@ Objectif : savoir interroger et faire évoluer ce schéma proprement.
 - [Jointures](https://antoine07.github.io/db_web2/07_jointures.html)
 - [Agrégation](https://antoine07.github.io/db_web2/08_aggregation.html)
 - [Sous-requêtes (requêtes imbriquées)](https://antoine07.github.io/db_web2/11_sous_requetes.html)
-- [JSON dans MySQL](https://antoine07.github.io/db_web2/10_json_mysql.html)
+- [Transactions](https://antoine07.github.io/db_web2/09_transactions.html)
 
 ---
 

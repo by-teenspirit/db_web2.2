@@ -11,7 +11,6 @@
 - `Exercices/07_jointures.md`
 - `Exercices/08_aggregation.md`
 - `Exercices/09_normalisation.md`
-- `Exercices/10_json_mysql.md`
 - `Exercices/11_sous_requetes.md`
 
 ## MongoDB
