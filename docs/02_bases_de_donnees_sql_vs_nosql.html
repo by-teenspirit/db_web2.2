@@ -27,7 +27,7 @@
 </section>
 </foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="3" data-paginate="true" data-header="[← Index des chapitres](https://antoine07.github.io/db_web2/#5)" data-footer="[← Index des chapitres](https://antoine07.github.io/db_web2/#5)" lang="C" data-marpit-pagination="3" style="--paginate:true;--header:[← Index des chapitres](https://antoine07.github.io/db_web2/#5);--footer:[← Index des chapitres](https://antoine07.github.io/db_web2/#5);" data-marpit-pagination-total="20">
 <header><a href="https://antoine07.github.io/db_web2/#5">← Index des chapitres</a></header>
-<h2 id="contexte-historique-sql-et-mysql">Contexte historique (SQL et MySQL)</h2>
+<h2 id="contexte-historique-sql-et-sgbd">Contexte historique (SQL et SGBD)</h2>
 <footer><a href="https://antoine07.github.io/db_web2/#5">← Index des chapitres</a></footer>
 </section>
 </foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="4" data-paginate="true" data-header="[← Index des chapitres](https://antoine07.github.io/db_web2/#5)" data-footer="[← Index des chapitres](https://antoine07.github.io/db_web2/#5)" lang="C" data-marpit-pagination="4" style="--paginate:true;--header:[← Index des chapitres](https://antoine07.github.io/db_web2/#5);--footer:[← Index des chapitres](https://antoine07.github.io/db_web2/#5);" data-marpit-pagination-total="20">
@@ -55,16 +55,14 @@
 </section>
 </foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="6" data-paginate="true" data-header="[← Index des chapitres](https://antoine07.github.io/db_web2/#5)" data-footer="[← Index des chapitres](https://antoine07.github.io/db_web2/#5)" lang="C" data-marpit-pagination="6" style="--paginate:true;--header:[← Index des chapitres](https://antoine07.github.io/db_web2/#5);--footer:[← Index des chapitres](https://antoine07.github.io/db_web2/#5);" data-marpit-pagination-total="20">
 <header><a href="https://antoine07.github.io/db_web2/#5">← Index des chapitres</a></header>
-<h2 id="mysql--pr%C3%A9sentation">MySQL : présentation ?</h2>
+<h2 id="postgresql--pr%C3%A9sentation">PostgreSQL : présentation ?</h2>
 <ul>
-<li>
-<p>Créé en <strong>1995</strong></p>
-</li>
-<li>
-<p>Objectif initial :</p>
+<li>Créé en <strong>1996</strong></li>
+<li>Objectifs :
 <ul>
-<li><strong>rapide</strong></li>
-<li><strong>simple à déployer</strong></li>
+<li><strong>fiable</strong> (ACID, contraintes, intégrité)</li>
+<li><strong>proche des standards SQL</strong></li>
+<li><strong>extensible</strong> (types, fonctions, index)</li>
 <li><strong>open-source</strong></li>
 </ul>
 </li>
@@ -74,17 +72,16 @@
 </foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="7" data-paginate="true" data-header="[← Index des chapitres](https://antoine07.github.io/db_web2/#5)" data-footer="[← Index des chapitres](https://antoine07.github.io/db_web2/#5)" lang="C" data-marpit-pagination="7" style="--paginate:true;--header:[← Index des chapitres](https://antoine07.github.io/db_web2/#5);--footer:[← Index des chapitres](https://antoine07.github.io/db_web2/#5);" data-marpit-pagination-total="20">
 <header><a href="https://antoine07.github.io/db_web2/#5">← Index des chapitres</a></header>
 <ul>
-<li>
-<p>Très utilisé dans le web :</p>
+<li>Très utilisé dans le web :
 <ul>
-<li>PHP / LAMP</li>
-<li>CMS (WordPress, Drupal…)</li>
+<li>APIs / backends (Node, Python, Java…)</li>
+<li>produits data (BI, reporting)</li>
 <li>applications CRUD</li>
 </ul>
 </li>
 </ul>
 <blockquote>
-<p>MySQL a démocratisé le SQL dans le monde web. Dans ce cours c'est cette base de données que nous allons utiliser.</p>
+<p>PostgreSQL est un excellent SGBD pour apprendre le relationnel. Dans ce cours, c'est cette base de données que nous allons utiliser.</p>
 </blockquote>
 <footer><a href="https://antoine07.github.io/db_web2/#5">← Index des chapitres</a></footer>
 </section>
@@ -100,12 +97,11 @@
 </ul>
 </li>
 <li>
-<p>MySQL intègre :</p>
+<p>PostgreSQL apporte :</p>
 <ul>
-<li>moteurs transactionnels (InnoDB), mais pas que ...</li>
-<li>contraintes (FK)</li>
+<li>transactions + contraintes (FK, CHECK…)</li>
 <li>index avancés</li>
-<li>transactions <code>ACID</code> acronyme, non abordé dans ce cours</li>
+<li>types riches (dont <code>JSONB</code>)</li>
 </ul>
 </li>
 </ul>
@@ -115,7 +111,7 @@
 <header><a href="https://antoine07.github.io/db_web2/#5">← Index des chapitres</a></header>
 <p>Aujourd'hui :</p>
 <ul>
-<li>MySQL est un <strong>SGBD relationnel complet</strong></li>
+<li>PostgreSQL est un <strong>SGBD relationnel complet</strong></li>
 <li>toujours très utilisé en production</li>
 </ul>
 <footer><a href="https://antoine07.github.io/db_web2/#5">← Index des chapitres</a></footer>
@@ -162,13 +158,13 @@
 </section>
 </foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="13" data-paginate="true" data-header="[← Index des chapitres](https://antoine07.github.io/db_web2/#5)" data-footer="[← Index des chapitres](https://antoine07.github.io/db_web2/#5)" lang="C" data-marpit-pagination="13" style="--paginate:true;--header:[← Index des chapitres](https://antoine07.github.io/db_web2/#5);--footer:[← Index des chapitres](https://antoine07.github.io/db_web2/#5);" data-marpit-pagination-total="20">
 <header><a href="https://antoine07.github.io/db_web2/#5">← Index des chapitres</a></header>
-<h2 id="mysql-pour-le-cours">MySQL pour le cours</h2>
+<h2 id="postgresql-pour-le-cours">PostgreSQL pour le cours</h2>
 <ul>
 <li>
 <p>SQL = <strong>base fondamentale</strong> de la modélisation des données</p>
 </li>
 <li>
-<p>MySQL = excellent pour comprendre - nous allons aborder tout ça durant le cours</p>
+<p>PostgreSQL = excellent pour comprendre - nous allons aborder tout ça durant le cours</p>
 <ul>
 <li>tables</li>
 <li>relations</li>
@@ -205,7 +201,7 @@ même si l'on utilise ensuite du NoSQL.</p>
 </foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="16" data-paginate="true" data-header="[← Index des chapitres](https://antoine07.github.io/db_web2/#5)" data-footer="[← Index des chapitres](https://antoine07.github.io/db_web2/#5)" lang="C" data-marpit-pagination="16" style="--paginate:true;--header:[← Index des chapitres](https://antoine07.github.io/db_web2/#5);--footer:[← Index des chapitres](https://antoine07.github.io/db_web2/#5);" data-marpit-pagination-total="20">
 <header><a href="https://antoine07.github.io/db_web2/#5">← Index des chapitres</a></header>
 <blockquote>
-<p>Exemples de SGDB ou  DBMS en anglais : MySQL, PostgreSQL, SQLite, MongoDB, Redis…</p>
+<p>Exemples de SGDB ou  DBMS en anglais : PostgreSQL, SQLite, MongoDB, Redis…</p>
 </blockquote>
 <footer><a href="https://antoine07.github.io/db_web2/#5">← Index des chapitres</a></footer>
 </section>
