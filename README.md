@@ -1,87 +1,62 @@
-# Cours SQL (MySQL) — Slides Marp + Exercices
+# db_web2.2 — cours bases de données
+
+Support du cours bases de données : slides Marp, exercices par chapitre,
+diagrammes et TPs. Deux parcours en parallèle, **SQL** (MySQL / PostgreSQL) et
+**MongoDB**, sur le même fil rouge : une boutique.
 
 ## Contenu
 
-- Slides (Marp) : `slides/`
-- Scripts SQL “fil rouge Boutique” : `data/`
-- Exercices par chapitre : `Exercices/`
-- TPs : `TPs/`
-- (Nouveau) Cours MongoDB : `index_mongodb.md` + `slides/mongodb_*.md`
+| Dossier | Contenu |
+|---|---|
+| `slides/` | les decks Marp, un par chapitre, plus `index.md` et `mongodb_index.md` |
+| `docs/` | les mêmes chapitres rendus en HTML, prêts à ouvrir dans un navigateur |
+| `Exercices/` | les exercices, 11 chapitres SQL et 10 chapitres MongoDB |
+| `diagrams/` | les schémas PlantUML : modèle de la boutique, ordre d'exécution SQL, jointures, normalisation, niveaux d'agrégation |
+| `TPs/` | l'installation de Docker, le TP client, et `app-project-starter` |
+| `tp-app-project/` | le projet de TP : Postgres + MongoDB + Adminer, une mini API Node et un client React |
 
-## Installation MySQL (recommandé)
+## Le parcours
 
-Pour le cours, on recommande **MAMP** (macOS + Windows) pour des raisons pédagogiques : tout le monde a le même setup, et MAMP fournit un **environnement de dev** prêt à l’emploi (MySQL + outils).
+**SQL** — installation, SQL contre NoSQL, DDL et création de tables, le fil
+rouge boutique, les requêtes de base, le modèle relationnel, les jointures,
+l'agrégation, la normalisation, les transactions, JSON, les sous-requêtes.
 
-Alternatives :
-- macOS : **Homebrew** (installation “native”)
-- tous OS : **Docker** (portable / isolé)
+**MongoDB** — installation, modèle document et BSON, collections et validation
+de schéma, le même fil rouge boutique, les requêtes, les relations et `$lookup`,
+les écritures, le pipeline d'agrégation, l'indexation et la performance, les
+bonnes pratiques.
 
-## Démarrage rapide (base `shop`)
+## Le TP
 
-Importer le schéma + les données :
+`tp-app-project/` (et son starter dans `TPs/app-project-starter/`) monte les
+bases dans Docker, puis une API Node sans framework et un client React :
+
 ```bash
-mysql -u root -p < data/shop_schema.sql
-mysql -u root -p < data/shop_seed.sql
-mysql -u root -p shop
+docker compose up -d
+docker compose exec postgres psql -U postgres -d shop -v ON_ERROR_STOP=1 -f /shared/postgres/seed.sql
+cd api && npm i && npm run dev
+cd ../client && npm i && npm run dev
 ```
 
-Si vous êtes sur MAMP (port MySQL souvent `8889`), ajoutez `-h 127.0.0.1 -P 8889` à chaque commande.
+`shared/` contient les scripts de seed Postgres et MongoDB. Le client démarre en
+`fetch` simple, à refactorer ensuite avec TanStack Query.
 
-Optionnel (partie JSON) :
-```bash
-mysql -u root -p < data/shop_json_evolution.sql
-```
+## Rendre les slides
 
-## Démarrage rapide MongoDB (base `shop`)
+Avec l'extension **Marp for VS Code**, ou en ligne de commande :
 
-Dans `mongosh`, depuis la racine du repo :
-
-```js
-load("data/shop_mongodb_seed.js");
-use("shop");
-db.orders.findOne();
-```
-
-## Rendu des slides (Marp)
-
-### Option 1 — VS Code
-
-- Installer l’extension “Marp for VS Code”
-- Ouvrir un fichier dans `slides/`
-- Prévisualiser / exporter (PDF/HTML) depuis l’extension
-
-### Option 2 — Marp CLI
-
-Installer :
 ```bash
 npm i -g @marp-team/marp-cli
-```
-
-Exporter un PDF :
-```bash
 marp slides/index.md --pdf -o exports/index.pdf
-```
-
-Exporter tous les decks :
-```bash
-mkdir -p exports
 marp slides/*.md --pdf -o exports/
 ```
 
-## MySQL via Docker (option)
+Les chapitres déjà rendus sont dans `docs/`, il n'y a rien à installer pour les
+lire.
 
-```bash
-docker run --name mysql8 \
-  -e MYSQL_ROOT_PASSWORD=root \
-  -p 3306:3306 \
-  -d mysql:8
+## À savoir
 
-docker exec -i mysql8 mysql --default-character-set=utf8mb4 -uroot -proot < data/shop_schema.sql
-docker exec -i mysql8 mysql --default-character-set=utf8mb4 -uroot -proot < data/shop_seed.sql
-
-docker exec -it mysql8 mysql --default-character-set=utf8mb4 -uroot -proot shop
-
-SHOW VARIABLES LIKE 'character_set%';
-
-SET time_zone = 'Europe/Paris';
-```
+Le dossier `data/`, auquel renvoyaient les commandes de démarrage rapide
+(`shop_schema.sql`, `shop_seed.sql`, `shop_mongodb_seed.js`), n'est pas dans ce
+dépôt. Pour monter la base de la boutique, passer par les seeds de
+`tp-app-project/shared/`.
